@@ -33,7 +33,7 @@ int main(void)
   
   std::cout.precision(16);
 
-  for (int ii=1;ii<=100;ii++)
+  for (int ii=1;ii<=1000;ii++)
     {
       z=ii*0.2;
       std::cout<<z<<"\t"<<fabs((sin(z)-serie(z))/sin(z))<<std::scientific<<std::endl;
