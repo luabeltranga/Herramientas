@@ -1,48 +1,42 @@
 #include <iostream>
 #include <cmath>
+#include <cstdio>
 
-double serie (double x)
-{
-  double suma =x;
-  double it=x;
-  
-
-  for(double j=1;j<=100;j++)
-    {
-      it*=-x*x/(2*j+1)/(2*j);
-      
-      suma+=it;
-
-    }
-
-
-  return suma;
-
-}
-
-
-
-
-
-
+double serie (double x );
 
 int main(void)
 
-{
-  double z=1;
+{ 
   
-  std::cout.precision(16);
 
-  for (int ii=1;ii<=1000;ii++)
+  double z=1; 
+  
+  
+
+  for (int ii=100;ii<=1000;ii++)
     {
       z=ii*0.2;
-      std::cout<<z<<"\t"<<fabs((sin(z)-serie(z))/sin(z))<<std::scientific<<std::endl;
+      printf ("%.16e %30.16e\n",z,fabs((serie(z)-sin(z))/sin(z)));
 
     }
-  
-  
-  std::cout<<serie(M_PI)<<std::scientific<<std::endl;
-  std::cout<<serie(0)<<std::scientific<<std::endl;
+ 
 
   return 0;
+}
+double serie (double x)
+{
+  double suma =x, it=x, eps = pow(10,-8),j=1;
+  
+
+ do 
+   {
+     it*=-x*x/(2*j+1)/(2*j);
+      
+      suma+=it;
+      j++;
+  }
+ while (fabs(it/suma)>eps );
+
+  return suma;
+
 }

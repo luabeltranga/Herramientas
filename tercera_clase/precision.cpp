@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <cstdio>
 int main(void)
 {
 
@@ -7,11 +7,11 @@ int main(void)
 
 
 
- for (int n = 0; n < 10; ++n)
+ for (int n = 0; n <= 150; ++n)
     {
       eps /= 2.0;
       one= 1.0 + eps;
-      std::cout<<n<<"\t"<<one<<"\t"<<eps<<std::scientific<<std::endl;
+      printf ("%u %20.8e %20.8e \n",n,eps,one );
     }
 
 
