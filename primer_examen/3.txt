@@ -1,0 +1,7 @@
+Como se observa en la grafica alrededor del cero
+las funciones q(x) y r(x) se dispersan alredesor del cero
+esto sucede debido al underflow  a las restas, sumas
+y productos que deben calcular, aunque la funcion 
+q(x) realiza los productos directamente y la funcion r(x)
+con la funcion pow, se observa que el factor determinante 
+es la suma y la resta.  

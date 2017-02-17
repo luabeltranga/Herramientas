@@ -1,0 +1,7 @@
+Se observa que difieren muy poco casi no se observa un cambio 
+apreciable, esto se debe a que se suman terminos positivos 
+mientras que una aumenta se valor desde un valor mu peqeño,
+la otra lo hace mas lentamente a la hora del calculo,
+por ejemplo mientras que para una el primer termino a sumar es 
+1 para la otra es un valor mas pequeño que uno, esto produce que una 
+comience muy cerca del valor de convergencia mientras la otra no.
