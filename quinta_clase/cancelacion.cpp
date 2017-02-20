@@ -42,7 +42,7 @@ babas suma2(int N){
 
   for (babas i=1 ;i<=N;i++){
     sum1+=1.0-1.0/(2*i);
-    sum2+=1.0-1.0/(2*i+1);
+    sum2+=2*i/(2*i+1.0);
     }
   return sum2-sum1;
 }
