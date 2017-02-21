@@ -1,0 +1,95 @@
+
+
+*******************************************************************************
+Tue Feb 21 17:52:59 2017
+
+
+FIT:    data read from "data.dat"
+        format = z
+        #datapoints = 20
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x**b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 2.8700000000e+03   0.00e+00  2.45e+01    1.000000e+00   1.000000e+00
+2858 9.7232119102e-321 -nan       2.45e-21   5.274508e-162   5.999416e-01
+
+After 285830 iterations the fit converged.
+final sum of squares of residuals : 9.72321e-321
+abs. change during last iteration : 0
+
+
+Hmmmm.... Sum of squared residuals is zero. Can't compute errors.
+
+Final set of parameters 
+======================= 
+
+a               = 5.27451e-162   
+b               = 0.599942       
+
+
+*******************************************************************************
+Tue Feb 21 17:56:54 2017
+
+
+FIT:    data read from "data.dat"
+        format = z
+        #datapoints = 20
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x**b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.4750375036e-281  0.00e+00  2.97e-140  5.274508e-162   1.600000e+01
+9995 1.9024212253e-288 -1.00e+00  2.97e-140  5.256495e-162   1.334089e+01
+
+After 99954 iterations the fit converged.
+final sum of squares of residuals : 1.90242e-288
+abs. change during last iteration : -1.9024e-293
+
+
+Hmmmm.... Sum of squared residuals is zero. Can't compute errors.
+
+Final set of parameters 
+======================= 
+
+a               = 5.2565e-162    
+b               = 13.3409        
+
+
+*******************************************************************************
+Tue Feb 21 17:57:58 2017
+
+
+FIT:    data read from "data.dat"
+        format = z
+        x range restricted to [0.00000 : 20.0000]
+        #datapoints = 20
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x**b + c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 2.0000000000e+01   0.00e+00  5.77e-01   5.256495e-162   1.334089e+01   1.000000e+00
+2418 1.6388543595e-288 -9.99e-01  5.77e-21   5.256495e-162   1.334089e+01 -9.633723e-146
+
+After 241810 iterations the fit converged.
+final sum of squares of residuals : 1.63885e-288
+abs. change during last iteration : -1.63756e-293
+
+
+Hmmmm.... Sum of squared residuals is zero. Can't compute errors.
+
+Final set of parameters 
+======================= 
+
+a               = 5.2565e-162    
+b               = 13.3409        
+c               = -9.63372e-146  

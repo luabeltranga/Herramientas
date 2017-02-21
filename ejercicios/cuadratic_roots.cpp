@@ -1,14 +1,15 @@
 #include <iostream>
 #include <cmath>
 #include <cstdio>
-#include <string>
 
 double root1(int a ,int b, double c,int n ), root2(int a ,int b, double c,int n); 
 
 int main(void){
 
-  for(int i = 1; i<= 10; i++){
     double z = 0.1;
+    
+  
+  for(int i = 1; i<= 20; i++){
     printf("%d %30.100e %30.100e \n",i,fabs(root1(1,1,z,1)-root2(1,1,z,1)),fabs(root1(1,1,z,2)-root2(1,1,z,2)));
     z/=10.0;
   }
