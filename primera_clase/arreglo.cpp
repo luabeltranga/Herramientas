@@ -1,9 +1,9 @@
 #include <iostream>
-
+#include <string>
 int main(void)
 
 {
-  int data[10]={1,2,3,4,5,6,7,8,9,10};
+  std::string data {1,2,3,4,5,6,7,8,9,10};
   int sum=0;
   for(auto x:data){
     sum+=x;

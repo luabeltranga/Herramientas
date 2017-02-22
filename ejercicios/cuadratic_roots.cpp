@@ -6,10 +6,10 @@ double root1(int a ,int b, double c,int n ), root2(int a ,int b, double c,int n)
 
 int main(void){
 
-    double z = 0.1;
+  double z = 0.1;
     
   
-  for(int i = 1; i<= 20; i++){
+  for(int i = 1; i<= 100; i++){
     printf("%d %30.100e %30.100e \n",i,fabs(root1(1,1,z,1)-root2(1,1,z,1)),fabs(root1(1,1,z,2)-root2(1,1,z,2)));
     z/=10.0;
   }
@@ -18,7 +18,7 @@ int main(void){
 
 
 double root1(int a ,int b, double c, int n) {
-
+  
   double x=0;
   
   if(n==1){
