@@ -13,7 +13,7 @@ int main(void){
 
   for (int j=1; j<=10000 ;j++){
     
-    printf("%d %6.16e %6.16e \n",j,std::fabs((suma1(j)-suma3(j))/suma3(j)),std::fabs((suma1(j)-suma2(j))/suma2(j))) ;
+    std::printf("%d %6.16e %6.16e \n",j,std::fabs((suma1(j)-suma3(j))/suma3(j)),std::fabs((suma1(j)-suma2(j))/suma2(j))) ;
     // printf("%d %10.3e %10.3e %10.3e \n",j,suma1(j),suma2(j),suma3(j)) ;
   }
 
