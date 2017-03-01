@@ -7,13 +7,13 @@ double serie (double x );
 int main(void)
 
 { 
-  
+   
 
   double z=1; 
   
   
 
-  for (int ii=100;ii<=1000;ii++)
+  for (int ii=0;ii<=1000;ii++)
     {
       z=ii*0.2;
       printf ("%.16e %30.16e\n",z,fabs((serie(z)-sin(z))/sin(z)));

@@ -3,7 +3,7 @@
 #include <cmath>
 
 
-typedef double babas;
+typedef float babas;
 
 
 babas suma1(int N) , suma2 (int N) , suma3 (int N);
@@ -11,7 +11,7 @@ babas suma1(int N) , suma2 (int N) , suma3 (int N);
 
 int main(void){
 
-  for (int j=1; j<=10000 ;j++){
+  for (int j=1; j<=1000000 ;j++){
     
     std::printf("%d %6.16e %6.16e \n",j,std::fabs((suma1(j)-suma3(j))/suma3(j)),std::fabs((suma1(j)-suma2(j))/suma2(j))) ;
     // printf("%d %10.3e %10.3e %10.3e \n",j,suma1(j),suma2(j),suma3(j)) ;
@@ -63,7 +63,7 @@ babas suma3(int N){
 
 
 
-/* trucos: para signos alternantes deinir una variable con -1 y cuando la use multiplicarla por -1 y viceversa
+/* trucos: para signos alternantes definir una variable con -1 y cuando la use multiplicarla por -1 y viceversa
    
 
    typedef para colocar un apodo al declarar euna variable:

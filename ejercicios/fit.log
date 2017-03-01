@@ -93,3 +93,174 @@ Final set of parameters
 a               = 5.2565e-162    
 b               = 13.3409        
 c               = -9.63372e-146  
+
+
+*******************************************************************************
+Fri Feb 24 14:17:20 2017
+
+
+FIT:    data read from 'data.txt'
+        format = z
+        #datapoints = 100
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*exp(b*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.3569661489e+86   0.00e+00  2.15e+44    1.000000e+00   1.000000e+00
+   1 1.2596111977e+86  -5.63e+05  2.15e+43    9.999094e-01   9.905244e-01
+
+The maximum lambda = 1.000000e+20 was exceeded. Fit stopped.
+final sum of squares of residuals : 1.25961e+86
+rel. change during last iteration : -5.63456
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.13372e+42
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.28532e+84
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.999909         +/- 22.3         (2231%)
+b               = 0.990524         +/- 0.2125       (21.46%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -1.000  1.000 
+
+
+*******************************************************************************
+Fri Feb 24 14:22:53 2017
+
+
+FIT:    data read from 'data.txt'
+        format = z
+        #datapoints = 100
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)= a*exp(-b*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.3563315024e-02   0.00e+00  4.44e-02    1.000000e+00   1.000000e+00
+   7 9.1827198035e-09  -1.03e-01  4.44e-09    1.255202e+00   2.410314e+00
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 9.18272e-09
+rel. change during last iteration : -1.02693e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 9.67994e-06
+variance of residuals (reduced chisquare) = WSSR/ndf   : 9.37012e-11
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.2552           +/- 0.001204     (0.09589%)
+b               = 2.41031          +/- 0.0009485    (0.03935%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.996  1.000 
+
+
+*******************************************************************************
+Tue Feb 28 20:42:46 2017
+
+
+FIT:    data read from "data.txt"
+        format = z
+        #datapoints = 100
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*exp(-b*x)
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Tue Feb 28 20:42:51 2017
+
+
+FIT:    data read from "data.txt"
+        format = z
+        #datapoints = 100
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*exp(-b*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.3563315024e-02   0.00e+00  4.44e-02    1.000000e+00   1.000000e+00
+   7 9.1827198035e-09  -1.03e-01  4.44e-09    1.255202e+00   2.410314e+00
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 9.18272e-09
+rel. change during last iteration : -1.02693e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 9.67994e-06
+variance of residuals (reduced chisquare) = WSSR/ndf   : 9.37012e-11
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.2552           +/- 0.001204     (0.09589%)
+b               = 2.41031          +/- 0.0009485    (0.03935%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.996  1.000 
+
+
+*******************************************************************************
+Tue Feb 28 20:45:10 2017
+
+
+FIT:    data read from "data.txt"
+        format = z
+        #datapoints = 100
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Tue Feb 28 20:45:28 2017
+
+
+FIT:    data read from "data.txt"
+        format = z
+        #datapoints = 100
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*exp(-b*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 8.3563315024e-02   0.00e+00  4.44e-02    1.000000e+00   1.000000e+00
+   7 9.1827198035e-09  -1.03e-01  4.44e-09    1.255202e+00   2.410314e+00
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 9.18272e-09
+rel. change during last iteration : -1.02693e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 9.67994e-06
+variance of residuals (reduced chisquare) = WSSR/ndf   : 9.37012e-11
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.2552           +/- 0.001204     (0.09589%)
+b               = 2.41031          +/- 0.0009485    (0.03935%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.996  1.000 
