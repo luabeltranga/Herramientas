@@ -1,26 +1,25 @@
-#include <stdio.h>
+#include <cstdio>
 #include <gsl/gsl_linalg.h>
 
-const int n = 5;
-
+const int n = 4;
+const int nn = 4;
 int
 main (void)
 {
-  double a_data[] = { 1.0, 0, 0, 0, 0,
-                      0, 1.0, 0, 0, 0,
-                      0, 0, 1.0, 0, 0,
-                      0, 0, 0, 1.0, 0,
-                      0, 0, 0, 0,  2.0};
+  double a_data[] = { 1.0, 0, 0, 0,
+                      0, 1.0, 0, 0,
+                      0, 0, 1.0, 0,
+                      0, 0, 0, 1.0};
   
-  double b_data[] = { 1.0, 2.0, 3.0, 4.0, 5.0 };
+  double b_data[] = { 1.0, 2.0 , 3.0 , 4.0};
   
   gsl_matrix_view m 
-    = gsl_matrix_view_array (a_data, n, n);
+    = gsl_matrix_view_array (a_data, n, nn);
   
   gsl_vector_view b
-    = gsl_vector_view_array (b_data, n);
+    = gsl_vector_view_array (b_data, nn);
   
-  gsl_vector *x = gsl_vector_alloc (n);
+  gsl_vector *x = gsl_vector_alloc (nn);
   
   int s;
   
