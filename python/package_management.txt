@@ -1,4 +1,6 @@
 *** TODO python packaga [0/0]
-   ** TODO check if pip is installed
-   ** run " pip3.5 install --usr packages"
-   ** now the libaries ar linked with python 3.5
+    - check if pip is installed
+    - run " pip3.5 install --usr packages"
+    - now the libaries ar linked with python 3.5
+    - check  with "python3.5 -c "import sys; print ('\n'.join(sys.path))"
+      "
