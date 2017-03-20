@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <gsl/gsl_linalg.h>
 
+const int n=4;
+
 int
 main (void)
 {
@@ -12,16 +14,16 @@ main (void)
   double b_data[] = { 1.0, 2.0, 3.0, 4.0 };
 
   gsl_matrix_view m 
-    = gsl_matrix_view_array (a_data, 4, 4);
+    = gsl_matrix_view_array (a_data, n, n);
 
   gsl_vector_view b
-    = gsl_vector_view_array (b_data, 4);
+    = gsl_vector_view_array (b_data, n);
 
-  gsl_vector *x = gsl_vector_alloc (4);
+  gsl_vector *x = gsl_vector_alloc (n);
   
   int s;
 
-  gsl_permutation * p = gsl_permutation_alloc (4);
+  gsl_permutation * p = gsl_permutation_calloc (n);
 
   gsl_linalg_LU_decomp (&m.matrix, p, &s);
 

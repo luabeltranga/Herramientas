@@ -1,6 +1,6 @@
 #include <iostream>
 #include <Eigen/Dense>
-using namespace std;
+
 using namespace Eigen;
 int main()
 {
@@ -8,11 +8,12 @@ int main()
   std::cout.setf(std::ios::scientific);
    Matrix3d A;
    Vector3d b;
-   A << 1,2,3,  4,5,6,  7,8,10;
+   A << 1,2,3,  4,5,6,  7,8,9;
    b << 3, 3, 4;
-   cout << "Here is the matrix A:\n" << A << endl;
-   cout << "Here is the vector b:\n" << b << endl;
+   std:: cout << "Here is the matrix A:\n" << A << std::endl;
+   std::cout << "Here is the vector b:\n" << b << std::endl;
    Vector3d x = A.colPivHouseholderQr().solve(b);
-   cout << "The solution is:\n" << x << endl;
-   cout << "The precision is:\n" << (A*x-b).norm() << endl;
+   // Vector3d x = A.colPivHouseholderQr();
+   std::cout << "The solution is:\n" << x << std::endl;
+   std::cout << "The precision is:\n" << (A*x-b).norm() << std::endl;
 }
