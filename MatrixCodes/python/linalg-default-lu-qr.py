@@ -21,19 +21,19 @@ while ii < N:
     b = sp.random.random(M)
     
     # Default solve
-    x = sp.linalg.solve(A, b)
+   #x = sp.linalg.solve(A, b)
     
     # lu solve
-    #x = sp.linalg.lu_solve(sp.linalg.lu_factor(A), b)
+    x = sp.linalg.lu_solve(sp.linalg.lu_factor(A), b)
     
     # qr solve
     #Q, R = sp.linalg.qr(A)
     #y = np.dot(Q.T, b)
     #x = sp.linalg.solve(R, y)
-
+    
     # increment counter
     ii = ii + 1
-
-
+    print x
+    
 # Printing
 #print x

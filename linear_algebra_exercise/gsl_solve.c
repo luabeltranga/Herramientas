@@ -32,6 +32,7 @@ main (void)
   printf ("x = \n");
   gsl_vector_fprintf (stdout, x, "%g");
 
+  
   gsl_permutation_free (p);
   gsl_vector_free (x);
   return 0;
