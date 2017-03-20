@@ -21,10 +21,22 @@ void resolve(void){
 
   b << 1.0 << 2.0 << 3.0 << 4.0 ;
   // b.print();
-  arma::mat P,L,U;
-  arma::lu(L, U ,P ,A);
-  arma::vec x = solve(trimatu(U),solve(trimatl(L),P*b));
 
+  //lu_solve
+
+  /*arma::mat P,L,U;
+    arma::lu(L, U ,P ,A);
+    arma::vec x = solve(trimatu(U),solve(trimatl(L),P*b)); */
+
+  //qr_solve
+  
+  /*arma::mat Q, R;
+  arma::qr(Q,R,A);
+  arma::mat x =solve(R,solve(Q,b));*/
+
+  //solve
+
+  arma::mat x=solve(A,b);
   x.print();
 }
 

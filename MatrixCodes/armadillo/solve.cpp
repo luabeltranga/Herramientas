@@ -23,7 +23,7 @@ void solvesystem(const int & size)
   arma::vec b = arma::randu<arma::vec>(size);
   
   // Default solve 
-  arma::vec x = arma::solve(A, b); // normal solve
+  //arma::vec x = arma::solve(A, b); // normal solve
 
   // LU
   //arma::mat P,L,U;
@@ -31,8 +31,10 @@ void solvesystem(const int & size)
   //arma::vec x = solve(trimatu(U), solve(trimatl(L), P*b) );
 
   // QR
+  arma::mat Q, R;
+  arma::qr(Q,R,A);
+  arma::mat x =solve(Q,solve(R,b));
   
-
   // Printing
   std::cout << x << std::endl;
 }

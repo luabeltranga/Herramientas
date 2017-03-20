@@ -20,9 +20,9 @@ void solver(void){
   Eigen::Vector4d b;
   b<< 1.0, 2.0, 3.0, 4.0;
 
-  Eigen::Vector4d x=A.lu().solve(b);
-  
-  
+  //Eigen::Vector4d x=A.lu().solve(b);
+  //Eigen::Vector4d x=A.Qr():solve(b);
+  //Eigen::Vector4d x=A.solve(b);
   std::cout<<x<<std::endl;
         
 
