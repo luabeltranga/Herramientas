@@ -18,9 +18,10 @@ int main(int argc, char **argv)
   
   std::cout.setf(std::ios::scientific);
   
-  double lambda  = 0.2;
- for (int N = 2; N <= 1024; N *=2) {
-
+  int N = 1024;
+  double lambda  = 0;
+ for (int jj = 0; jj <= 11; jj ++) {
+  
    
    Eigen::MatrixXd X(N, N), H0(N, N);
    
@@ -28,8 +29,8 @@ int main(int argc, char **argv)
    
    set_X(X);
    
-   std::cout << 1.0/N << " " << eigen_energy(H0, X, lambda, 0) << std::endl;
-   
+   std::cout << lambda << " " << eigen_energy(H0, X, lambda, 0) << std::endl;
+   lambda +=0.1; 
  }
 
  return 0;
@@ -95,10 +96,10 @@ double eigen_energy(Eigen::MatrixXd & H, Eigen::MatrixXd & X, const double lambd
   
   // - Calculo de Hlambda :
 
-  Eigen::MatrixXd M(H.cols(), H.cols());
+
 
   
-  M=H+lambda*X*X*X*X;
+  H=H+lambda*X*X*X*X;
   
  
   
@@ -107,7 +108,7 @@ double eigen_energy(Eigen::MatrixXd & H, Eigen::MatrixXd & X, const double lambd
 
     
     // - Extraer los valores propios al vector Eigen::VectorXd evals, solamente
-  Eigen::VectorXd evals = M.eigenvalues().real();
+  Eigen::VectorXd evals = H.eigenvalues().real();
     
 
     // la parte real (cuando pida los valores propios escriba .eigenvalues.real()) :

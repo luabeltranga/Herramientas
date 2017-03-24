@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
-#include <eigen3/Eigen/Dense>
-#include <eigen3/Eigen/Eigenvalues>
+#include <Eigen/Dense>
+#include <Eigen/Eigenvalues>
 
 void set_H0(Eigen::MatrixXd & M);
 
@@ -18,10 +18,10 @@ int main(int argc, char **argv)
   
   std::cout.setf(std::ios::scientific);
   
-  double lambda  = 0.2;
- for (int N = 2; N <= 1024; N *=2) {
+double lambda = 0.2;
+ 
+ for (int N = 2; N <= 1024; N *= 2) {
 
-   
    Eigen::MatrixXd X(N, N), H0(N, N);
    
    set_H0(H0);
