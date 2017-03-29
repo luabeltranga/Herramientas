@@ -95,10 +95,8 @@ double eigen_energy(Eigen::MatrixXd & H, Eigen::MatrixXd & X, const double lambd
   
   // - Calculo de Hlambda :
 
-  Eigen::MatrixXd M(H.cols(), H.cols());
+  Eigen::MatrixXd M=H+lambda*X*X*X*X;
 
-  
-  M=H+lambda*X*X*X*X;
   
  
   

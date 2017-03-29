@@ -5,16 +5,19 @@ Borrows from
 http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/
 */
 
-int main()
+int main(void)
 {
-  char *p;
-  unsigned short sz;
+  char *p ;
+  unsigned  short  sz=1;
   p = new char[sz];
-
+  delete[] p;
   p = new char[12];
-  delete(p);
-
+  delete[] p;
   p = new char[16];
-  printf("Size is %d",sz);
+  delete[] p;
+  printf("Size is %d\n" , sz);
+
+  delete p;
+  
   return 0;
 }
