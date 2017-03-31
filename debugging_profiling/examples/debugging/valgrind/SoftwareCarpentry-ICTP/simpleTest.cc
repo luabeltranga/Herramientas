@@ -17,7 +17,7 @@ int main(void)
   delete[] p;
   printf("Size is %d\n" , sz);
 
-  delete p;
+  //  delete p;
   
   return 0;
 }

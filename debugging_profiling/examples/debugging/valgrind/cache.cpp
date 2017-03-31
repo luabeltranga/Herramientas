@@ -7,7 +7,7 @@
 int main()
 {
   // Generate data
-  const unsigned arraySize = 32768;
+  const unsigned arraySize = 3276;
   int data[arraySize];
 
   for (unsigned c = 0; c < arraySize; ++c)
