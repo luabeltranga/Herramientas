@@ -2,51 +2,55 @@
 
 void print_array(const double data[], const int & size);
 
-int main()
+int main(void)
 {
   const int NX = 2, NY = 3, NZ = 4;
-  double *x, y[NY], z[NZ];
+  double *x=nullptr;
+  double y[NY]={10,9,8};
+  double z[NZ]={10,5,6,3};
   x = new double [NX];
-  int ii, jj, kk;
+  int ii=1, jj=20, kk=50;
+  //print_array(x, NX); 
+  print_array(y, NY); 
+  print_array(z, NZ);
+  std::cout << std::endl;
+  
+  for (ii = 0; ii < NX; ii++) {
+    x[ii] = ii; 
+  }
   print_array(x, NX); 
   print_array(y, NY); 
   print_array(z, NZ);
   std::cout << std::endl;
-
-  for (ii = 0; ii < NX; ++ii) {
-    x[jj] = ii; 
-  }
-  print_array(x, NZ); 
-  print_array(y, NY); 
-  print_array(z, NZ + NY);
-  std::cout << std::endl;
-
+  
   for (jj = 0; jj < NY; ++jj) {
-    x[jj] = ii; 
+    //x[jj] = ii; 
     y[jj] = jj; 
   }
-  print_array(x-NY, NY); 
-  print_array(y-NZ, NZ); 
-  print_array(z + NZ + NY, NX);
+  print_array(x, NX); 
+  print_array(y, NY); 
+  print_array(z, NZ);
   std::cout << std::endl;
-
-  for (kk = 0; jj < NZ; ++kk) {
-    x[kk] = ii; 
-    y[kk] = jj; 
+  
+  for (kk = 0; kk < NZ; ++kk) {
+    //x[kk] = ii; 
+    //y[kk] = jj; 
     z[kk] = ii; 
   }
   print_array(x, NX); 
   print_array(y, NY); 
   print_array(z, NZ);
   std::cout << std::endl;
-
+  delete [] x;
+  
+  
   return EXIT_SUCCESS;
 }
 
 void print_array(const double data[], const int & size)
 {
   std::cout << std::endl;
-  for (int ii = 0; ii < size; ++ii) {
+  for (int ii = 0; ii < size; ii++) {
     std::cout << data[ii] << "  " ;
   }
 }

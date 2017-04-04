@@ -7,7 +7,7 @@ http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/
 
 int main(void)
 {
-  char *p ;
+  char *p = nullptr;
   unsigned  short  sz=1;
   p = new char[sz];
   delete[] p;

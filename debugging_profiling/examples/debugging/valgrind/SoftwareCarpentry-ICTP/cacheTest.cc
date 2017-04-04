@@ -20,9 +20,9 @@ int main(int argc, char **argv)
   long *arr = new long[sI*sJ]; // double array.
 
   // El mejor!
-  //for (int i=0; i < sI*sJ; ++i) arr[i] = i;
+  for (int i=0; i < sI*sJ; ++i) arr[i] = i;
 
-  if (runFast == 1){
+  /*if (runFast == 1){
 
     for (long i=0; i < sI; ++i)
       for (long j=0; j < sJ; ++j)
@@ -35,6 +35,6 @@ int main(int argc, char **argv)
 	arr[(j * (sI)) + i ] = i;
 
   }
-
+  */
   return 1;
 }
