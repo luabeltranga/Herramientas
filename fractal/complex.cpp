@@ -11,13 +11,13 @@ int main(void){
   int a=0;
   std:: ofstream fout;
   // calcula el numero complejo por el metodo de newton
-  fout.open("primera_parte.dat");
-  for(double ii=-1;ii<1;ii+=0.001 ){
-    for(double jj = -1;jj<1;jj+=0.001){
+  fout.open("n_parte.dat");
+  for(double ii=-1;ii<1;ii+=0.01 ){
+    for(double jj = -1;jj<1;jj+=0.01){
       GSL_SET_COMPLEX(&test,ii,jj);
       newton(test);
       color(test,a);
-      if(a==3){	
+      if(a==1){	
 	fout<<" "<<ii<<" "<<jj<<" "<<"\n";
       }
     }
@@ -27,7 +27,7 @@ int main(void){
   return 0;
 }
 
-
+//metodo de newton
 void newton( gsl_complex &z){
   gsl_complex f =gsl_complex_sub_real(gsl_complex_pow_real (z,3.0),1.0);
   gsl_complex f_der =gsl_complex_mul_real(gsl_complex_pow_real (z,2.0),3.0);
@@ -36,7 +36,7 @@ void newton( gsl_complex &z){
     newton(z);
   }
 }
-
+//asigna color dependiendo del valor al que llega la raiz
 void color( gsl_complex &z,int &a){
   const gsl_complex r1 = {1.0,0.0};    //raices de z*z*z -1
   const gsl_complex r2 = {-0.5 ,std::sqrt(3)/2.0};

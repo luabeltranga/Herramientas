@@ -1,0 +1,137 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.1877' (creator: callgrind-3.12.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 80636
+Trigger: Program termination
+Profiled target:  ./test_gprof.x (PID 1877, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       99
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+     Ir 
+--------------------------------------------------------------------------------
+324,987  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+    Ir  file:function
+--------------------------------------------------------------------------------
+56,475  ???:_dl_addr [/lib64/libc-2.23.so]
+49,208  ???:do_lookup_x [/lib64/ld-2.23.so]
+30,019  test_gprof.c:main [/home/luabeltranga/Documents/a/herr/Herramientas/debugging_profiling/examples/profiling/test_gprof.x]
+30,014  test_gprof.c:func1 [/home/luabeltranga/Documents/a/herr/Herramientas/debugging_profiling/examples/profiling/test_gprof.x]
+30,013  test_gprof.c:func2 [/home/luabeltranga/Documents/a/herr/Herramientas/debugging_profiling/examples/profiling/test_gprof.x]
+30,013  test_gprof.c:new_func1 [/home/luabeltranga/Documents/a/herr/Herramientas/debugging_profiling/examples/profiling/test_gprof.x]
+25,451  ???:_dl_relocate_object [/lib64/ld-2.23.so]
+19,106  ???:check_match [/lib64/ld-2.23.so]
+18,225  ???:_dl_lookup_symbol_x [/lib64/ld-2.23.so]
+12,586  ???:strcmp [/lib64/ld-2.23.so]
+ 2,329  ???:_IO_file_overflow@@GLIBC_2.2.5 [/lib64/libc-2.23.so]
+ 1,651  ???:_dl_map_object_from_fd [/lib64/ld-2.23.so]
+ 1,231  ???:_dl_check_map_versions [/lib64/ld-2.23.so]
+ 1,096  ???:_IO_default_xsputn [/lib64/libc-2.23.so]
+ 1,041  ???:_dl_map_object_deps [/lib64/ld-2.23.so]
+ 1,034  ???:dl_main [/lib64/ld-2.23.so]
+   914  ???:_dl_name_match_p [/lib64/ld-2.23.so]
+   804  ???:strsep [/lib64/ld-2.23.so]
+   651  ???:malloc_consolidate [/lib64/libc-2.23.so]
+   625  ???:_dl_start [/lib64/ld-2.23.so]
+   614  ???:_dl_new_object [/lib64/ld-2.23.so]
+   542  ???:_IO_file_xsputn@@GLIBC_2.2.5 [/lib64/libc-2.23.so]
+   541  ???:_dl_sysdep_start [/lib64/ld-2.23.so]
+   536  ???:memcpy [/lib64/ld-2.23.so]
+   535  ???:__libc_memalign [/lib64/ld-2.23.so]
+   461  ???:_dl_cache_libcmp [/lib64/ld-2.23.so]
+   447  ???:memset [/lib64/ld-2.23.so]
+   431  ???:_dl_map_object [/lib64/ld-2.23.so]
+   405  ???:_dl_fini [/lib64/ld-2.23.so]
+   404  ???:_IO_do_write@@GLIBC_2.2.5 [/lib64/libc-2.23.so]
+   400  ???:strlen [/lib64/ld-2.23.so]
+   369  ???:ptmalloc_init.part.7 [/lib64/libc-2.23.so]
+   353  ???:open_verify.constprop.7 [/lib64/ld-2.23.so]
+   329  ???:_dl_next_ld_env_entry [/lib64/ld-2.23.so]
+   325  ???:_dl_allocate_tls_storage [/lib64/ld-2.23.so]
+   302  ???:bcmp [/lib64/ld-2.23.so]
+   296  ???:_IO_file_write@@GLIBC_2.2.5 [/lib64/libc-2.23.so]
+   295  ???:mmap [/lib64/ld-2.23.so]
+   268  ???:_dl_important_hwcaps [/lib64/ld-2.23.so]
+   247  ???:puts [/lib64/libc-2.23.so]
+   225  ???:_dl_fixup [/lib64/ld-2.23.so]
+   225  ???:_dl_load_cache_lookup [/lib64/ld-2.23.so]
+   185  ???:match_symbol [/lib64/ld-2.23.so]
+   163  ???:index [/lib64/ld-2.23.so]
+   161  ???:sysmalloc [/lib64/libc-2.23.so]
+   134  ???:_int_malloc [/lib64/libc-2.23.so]
+   121  ???:call_init.part.0 [/lib64/ld-2.23.so]
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: test_gprof.c
+--------------------------------------------------------------------------------
+    Ir 
+
+     .  //test_gprof.c
+     .  #include<stdio.h>
+     .  
+     .  void new_func1(void);
+     .  
+     .  void func1(void)
+     3  {
+     3      printf("\n Inside func1 \n");
+ 1,217  => ???:puts (1x)
+     1      int i = 0;
+     .  
+30,003      for(;i<10000;i++);
+     1      new_func1();
+31,518  => test_gprof.c:new_func1 (1x)
+     .  
+     1      return;
+     2  }
+     .  
+     .  static void func2(void)
+     3  {
+     3      printf("\n Inside func2 \n");
+ 1,217  => ???:puts (1x)
+     1      int i = 0;
+     .  
+30,003      for(;i<10000;i++);
+     1      return;
+     2  }
+     .  
+     .  void new_func1(void)
+     3  {
+     3      printf("\n Inside new_func1()\n");
+ 1,505  => ???:puts (1x)
+     1      int i = 0;
+     .  
+30,003      for(;i<10000;i++);
+     .  
+     1      return;
+     2  }
+     .  
+     .  int main(void)
+     3  {
+     7      printf("\n Inside main()\n");
+62,586  => ???:_dl_runtime_resolve_sse'2 (1x)
+     1      int i = 0;
+     .  
+30,003      for(;i<10000;i++);
+     1      func1();
+62,749  => test_gprof.c:func1 (1x)
+     1      func2();
+31,230  => test_gprof.c:func2 (1x)
+     .  
+     1      return 0;
+     2  }
+
+--------------------------------------------------------------------------------
+Ir 
+--------------------------------------------------------------------------------
+37  percentage of events annotated
+
