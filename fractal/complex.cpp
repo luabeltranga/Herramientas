@@ -17,10 +17,12 @@ int main(void){
       GSL_SET_COMPLEX(&test,ii,jj);
       newton(test);
       color(test,a);
-      if(a==1){	
-	fout<<" "<<ii<<" "<<jj<<" "<<"\n";
-      }
+      
+      fout<<a<<" ";
+      
+      
     }
+    fout<<std::endl;
   }
   fout.close();
   
