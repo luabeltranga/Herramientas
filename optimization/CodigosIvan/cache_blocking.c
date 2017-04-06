@@ -7,25 +7,25 @@
 
 #define min( a, b ) ( ((a) < (b)) ? (a) : (b) )
 
-int main(){
+int main(int argc, char ** argv){
   const int n = 512;
-  const int csize = 32;
-  float ***a, ***b;
+  const int csize = atoi(argv[1]);
+  double ***a, ***b;
   clock_t cputime1, cputime2;
   int i,j,k,ii,jj,kk;
   
   // Allocating memory for array/matrix
-  a = malloc(n*sizeof(float **));
+  a = malloc(n*sizeof(double **));
   for (i=0; i<n; i++){
-    a[i] = malloc(n*sizeof(float*));
+    a[i] = malloc(n*sizeof(double*));
     for (j=0; j<n; j++)
-      a[i][j] = malloc(n*sizeof(float));
+      a[i][j] = malloc(n*sizeof(double));
   }
   b = malloc(n*sizeof(float **));
   for (i=0; i<n; i++){
-    b[i] = malloc(n*sizeof(float*));
+    b[i] = malloc(n*sizeof(double*));
     for (j=0; j<n; j++)
-      b[i][j] = malloc(n*sizeof(float));
+      b[i][j] = malloc(n*sizeof(double));
   }
   
   // Filling matrices with zeros
@@ -38,7 +38,7 @@ int main(){
       for (k=0; k<n; ++k)
         b[i][j][k] = 0;
   
-  // Direct (inefficient) transposition
+  /* Direct (inefficient) transposition
   cputime1 = clock();
   for (i=0; i<n; ++i)
     for (j=0; j<n; ++j)
@@ -46,7 +46,8 @@ int main(){
         a[i][j][k] = b[k][j][i];
   cputime2 = clock() - cputime1;
   printf("Time for transposition: %f\n", ((double)cputime2)/CLOCKS_PER_SEC);
-  
+  */
+
   // Transposition using cache-blocking
   cputime1 = clock();
   for (ii=0; ii<n; ii+=csize)
@@ -57,7 +58,7 @@ int main(){
             for (k=kk; k<min(n,kk+csize-1); ++k)
               a[i][j][k] = b[k][j][i];
   cputime2 = clock() - cputime1;
-  printf("Time for transposition: %f\n", ((double)cputime2)/CLOCKS_PER_SEC);
+  printf("%d %10f\n",csize, ((double)cputime2)/CLOCKS_PER_SEC);
   
   return 0;
 }
