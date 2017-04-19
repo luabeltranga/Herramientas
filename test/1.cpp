@@ -5,7 +5,7 @@
 #include "papi.h"
 
 const int N = 2048; // matrix size
-const int csize = 2048;
+const int csize = 64;
 
 
 void code_to_be_measured(const double * A,const double * B, double *C);
