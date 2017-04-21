@@ -3,7 +3,7 @@
 
 int main(void){
 
-#pragma omp parallel num_threads (2)
+#pragma omp parallel num_threads (4)
   {
   int id = omp_get_thread_num();
   printf("HELLO, world., from thread %d!\n",id);
