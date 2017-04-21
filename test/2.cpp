@@ -4,7 +4,7 @@
 #include <cmath>
 #include "papi.h"
 
-const int N = 1024; // matrix size
+const int N = 8192; // matrix size
 //const int csize = 512;
 
 
