@@ -82,7 +82,7 @@ int main(int argc, char **argv)
   // printf("%d %11.10e %11e\n",csize, proc_time,mflops);
   
   //print C[]
-  long rete = 0;
+  /*long rete = 0;
   for(int ii = 0;ii<N;ii++){
     for(int jj= 0;jj<N;jj++){
      rete+=C[ii*N+jj];
@@ -90,7 +90,8 @@ int main(int argc, char **argv)
   }
   long tmpN = N;
   long retetheo = 2*std::pow(tmpN, 3);
-  std::cout << rete- retetheo << std::endl;
+  //std::cout << rete- retetheo << std::endl;
+  */
   printf("%d %11.10e %11e\n",csize, proc_time,mflops);
   delete [] A;
   
@@ -110,15 +111,13 @@ int main(int argc, char **argv)
 void code_to_be_measured(const double * A,const  double * B, double *C,int &csize)
   
 {
-  double buffer = 0;
   //cache matrix multiplication 
   for (int i = 0; i < N; i += csize){
     for (int j = 0; j < N; j += csize){
       for (int k = 0; k < N; ++k){
 	for (int i2 = i ; i2<i+csize; ++i2){  
-	  buffer = A[k*N+i2];
 	  for (int j2 = j; j2 <j+csize; ++j2){
-	    C[k*N+j2] += buffer * B[i2*N+j2];
+	    C[k*N+i2] += A[k*N+j2] * B[j2*N+i2];
 	  }	    
 	}
       }
