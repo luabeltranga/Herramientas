@@ -74,7 +74,7 @@ def draw(f, f_prime, img, size, img_name):
     print (roots)
     img.save(img_name, "PNG")
  
-size = 2048
+size = 4096
 img = Image.new("RGB", (size, size), (255, 255, 255))
 draw(lambda z: cubed(z), lambda z: dcubed(z), img, size, "fig1.png");
 #draw(lambda z: squared(z), lambda z: dsquared(z), img, size, "fig2.png");
