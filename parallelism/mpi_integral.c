@@ -29,12 +29,12 @@ int main(int argc, char **argv)
 
   /* Adjust problem size for sub-process */
   range = (upperLimit - lowerLimit) / noProcesses;
-  width = range / numberRects;
+  width = (range / numberRects)*noProcesses;
   lower = lowerLimit + range*processId;
 
   /* Calculate area for subproblem */ 
   area = 0.0;
-  for (i = 0; i < numberRects; ++i) {
+  for (i = 0; i < numberRects/noProcesses; ++i) {
     at = lower + i*width + width/2.0;
     heigth = f(at);
     area = area + width*heigth;
