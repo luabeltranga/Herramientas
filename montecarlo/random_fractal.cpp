@@ -30,7 +30,7 @@ void fractal(point &pinit, int n){
   std::mt19937_64 g(3999999);
   std::uniform_int_distribution<int> h(1,6);
   point p1 ,p2 , p3 ;  
-  p1.x = -2.0; p1.y = 0.0;
+  p1.x = -2.0; p1.y = 2.0;
   p2.x = 2.0; p2.y = 0.0;
   p3.x= 0.0; p3.y=4.0;
 
