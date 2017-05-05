@@ -2,7 +2,7 @@
 #include <vector>
 
 const int N = 50 ;
-const int NSTEPS = 2000 ;
+const int NSTEPS = 10000 ;
 const double L  = 10 ;
 const double DELTA  = L/(N-1) ;
 
@@ -33,11 +33,11 @@ void initial_conditions (std::vector<double> & mat){
 }
 void boundary_conditions (std::vector<double> & mat){
   int ii , jj ;
-  ii = 20;
+  ii = 0;
   for (jj = 0 ; jj < N ; ++jj){
     mat[ii*N +jj]=100.0;
   }
-  jj= 40;
+  ii= N-1;
   for (jj = 0 ; jj < N ; ++jj){
     mat[ii*N +jj] = -100.0;
   }
