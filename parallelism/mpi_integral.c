@@ -7,7 +7,7 @@
 double f(double x) {
   return x*x;
 }
-const int numberRects = 50;
+const int numberRects = 5;
 const double lowerLimit = 2.0;
 const double upperLimit = 5.0;
 
@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 
   /* problem variables */
   int i; 
-  double area, at, heigth, width, total, range, lower;
+  double area, at, heigth, width, total, range, lower, number_rects_b;
 
   /* MPI setup */
   MPI_Init(&argc, &argv);
@@ -28,13 +28,15 @@ int main(int argc, char **argv)
   MPI_Comm_rank(MPI_COMM_WORLD, &processId);
 
   /* Adjust problem size for sub-process */
+  number_rects_b= numberRects/noProcesses;
   range = (upperLimit - lowerLimit) / noProcesses;
-  width = (range / numberRects)*noProcesses;
+  width = range / number_rects_b;
   lower = lowerLimit + range*processId;
 
+  
   /* Calculate area for subproblem */ 
   area = 0.0;
-  for (i = 0; i < numberRects/noProcesses; ++i) {
+  for (i = 0; i < number_rects_b; ++i) {
     at = lower + i*width + width/2.0;
     heigth = f(at);
     area = area + width*heigth;
