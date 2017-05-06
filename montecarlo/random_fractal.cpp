@@ -62,14 +62,14 @@ void gif (int n){
   gif.close();
   
   gif.open("fractal.gp");
-  gif << "set terminal gif animate delay" << "\n";
+  gif << "set terminal gif animate" << "\n";
   gif << "set output 'frac.gif'" << "\n";
   gif << "unset key" << "\n";
   
   
   for (int ll = 1 ; ll < n; ll++){
     //gif << "plot [-2:2][0:4] 'fractal.txt' u 1:2 index "<< ll <<"  ps 0.5 pt 7"  << "\n";
-    gif << "plot [-30:30][-10:50] 'fractal.txt' u 1:2 every :::: "<< ll <<"  ps 1 pt 8 "  << "\n";
+    gif << "plot [-30:30][-10:50] 'fractal.txt' u 1:2 every :::: "<< ll <<"  ps 0.3 pt 6 "  << "\n";
   }
   gif.close();
 }
