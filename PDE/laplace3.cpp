@@ -34,16 +34,15 @@ void initial_conditions (std::vector<double> & mat){
 }
 void boundary_conditions (std::vector<double> & mat){
   int ii , jj ;
-  ii = 16;
-  for (jj = 8 ; jj < 38 ; ++jj){
+  ii = 0;
+  for (jj = 0 ; jj < 50 ; ++jj){
     mat[ii*N +jj]=100.0;
   }
-  ii= 32;
-  for (jj = 8 ; jj < 38 ; ++jj){
+  ii= 50;
+  for (jj = 0 ; jj < 50 ; ++jj){
     mat[ii*N +jj] = -100.0;
   }
 }
-
 void relax (std::vector<double> & mat){
   for (int ii = 1 ; ii < N-1 ; ++ii){
     for (int jj = 1 ; jj < N-1 ; ++jj){
@@ -58,7 +57,15 @@ void print (const std::vector<double> & mat){
   std::ofstream laplace ;
   laplace.precision(16);
   laplace.setf(std::ios::scientific);  
-  laplace.open("Laplace2.dat");
+  laplace.open("Laplace3.gp");
+  laplace << "splot 'Laplace3.dat' w l" << "\n";
+  laplace << "unset key" << "\n";
+  laplace << "set pm3d" << "\n";
+  laplace << "set xlabel \"x\" " <<" " << "\n";
+  laplace << "set ylabel \"y\" " << " " << "\n";
+  laplace << "pause -1" << "\n";
+  laplace.close();
+  laplace.open("Laplace3.dat");
   for (int ii = 0 ; ii < N ; ++ii){
     x = ii*DELTA; 
     for (int jj = 0 ; jj < N ; ++jj){

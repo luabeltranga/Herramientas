@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 
-const int N = 50 ;
+const int N = 51 ;
 const int NSTEPS = 2000 ;
-const double L  = 10.35345 ;
+const double L  = 10 ;
 const double DELTA  = L/(N-1) ;
 
 void initial_conditions (std::vector<double> & mat);
@@ -61,13 +62,15 @@ void relax (std::vector<double> & mat){
 void print (const std::vector<double> & mat){
   double x = 0.0;
   double y = 0.0;
-  
+  std::ofstream laplace ;
+  laplace.open("laplace1.dat");
   for (int ii = 0 ; ii < N ; ++ii){
     x = ii*DELTA; 
     for (int jj = 0 ; jj < N ; ++jj){
       y = jj*DELTA;
-      std::cout << x << "  " << y << " " << mat[ii*N +jj] << std::endl;
+      laplace << x << "  " << y << " " << mat[ii*N +jj] << "\n";
     }
-    std::cout << std::endl;
+    laplace << "\n";
   }
+  laplace.close();
 }
