@@ -1,10 +1,15 @@
+CXX = g++
+CXXFLAGS = -fsanitize=address -fsanitize=leak -fsanitize=undefined
+
 laplace:
-	g++ -fsanitize=address -fsanitize=leak -fsanitize=undefined  laplace.cpp
+	$(CXX) $(CXXFLAGS)laplace.cpp
 laplace2:
-	g++ -fsanitize=address -fsanitize=leak -fsanitize=undefined  laplace2.cpp
+	$(CXX) $(CXXFLAGS)  laplace2.cpp
 laplace3:
-	g++ -fsanitize=address -fsanitize=leak -fsanitize=undefined  laplace3.cpp
+	$(CXX) $(CXXFLAGS)  laplace3.cpp
 onda:
-	g++ -fsanitize=address -fsanitize=leak -fsanitize=undefined  onda.cpp
+	$(CXX) $(CXXFLAGS) onda.cpp
+poisson:
+	$(CXX) $(CXXFLAGS) poisson.cpp
 clean:
-	rm -f *.dat *.txt *.gp
+	rm -f *.dat *.txt *.gp *.out *.gif
