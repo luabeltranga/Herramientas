@@ -1,11 +1,13 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <cmath>
 
 const int N = 48 ;
-const int NSTEPS = 100  ;
+const int NSTEPS = 200  ;
 const double L  = 10 ;
 const double DELTA  = L/(N-1) ;
+
 
 void initial_conditions (std::vector<double> & mat);
 void boundary_conditions (std::vector<double> & mat);
@@ -13,15 +15,25 @@ void relax (std::vector<double> & mat);
 void print (const std::vector<double> & mat);
 void print_gnuplot (const std::vector<double> & mat);
 void start_gnuplot (void);
+bool compare (const std::vector<double> & mat,const std::vector<double> & mat_tmp);
 int main (void){
   std::vector<double> mat (N*N);
+  std::vector<double> mat_tmp ;
   initial_conditions(mat);
   boundary_conditions(mat);
   start_gnuplot();
+  
   for (int ii = 0 ; ii < NSTEPS; ++ii){
+    mat_tmp = mat;
     relax(mat);
     print_gnuplot(mat);
+    if (compare(mat,mat_tmp) == true){
+      break;   
+    }
   }
+  
+  
+  
   //print(mat);
 
   
@@ -109,7 +121,7 @@ void print (const std::vector<double> & mat){
 }
 
 void print_gnuplot (const std::vector<double> & mat){
-  std::cout << "splot '-' w pm3d t 'laplace'" << std::endl; 
+  std::cout << "splot '-'  t 'laplace'" << std::endl; 
   double x = 0.0;
   double y = 0.0;
   for (int ii = 0 ; ii < N ; ++ii){
@@ -126,9 +138,20 @@ void print_gnuplot (const std::vector<double> & mat){
 
 void start_gnuplot (void){
   std::cout << "set contour " << std::endl;
+  std::cout << "set pm3d map " << std::endl;
   std::cout << "set terminal gif animate  " << std::endl;
   std::cout << "set out 'laplace.gif' " << std::endl;
   std::cout << "unset key " << std::endl;
   
- 
+  
+}
+
+
+bool compare (const std::vector<double> & mat,const std::vector<double> & mat_tmp){
+  for (int ii = 0 ; ii < N ; ii++){
+    for (int jj = 0 ; jj < N ; jj++){
+      if (std::fabs(mat[ii*N+jj]-mat_tmp[ii*N+jj])/mat_tmp[ii*N+jj] > 0.01) return false;
+    }
+  }
+  return true;
 }

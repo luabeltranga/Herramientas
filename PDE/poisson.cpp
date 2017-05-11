@@ -13,15 +13,21 @@ void relax (std::vector<double> & mat);
 void print (const std::vector<double> & mat);
 void print_gnuplot (const std::vector<double> & mat);
 void start_gnuplot (void);
+bool compare (const std::vector<double> & mat,const std::vector<double> & mat_tmp);
 double rho(int ix , int iy);
 int main (void){
   std::vector<double> mat (N*N);
+  std::vector<double> mat_tmp ;
   initial_conditions(mat);
   boundary_conditions(mat);
   start_gnuplot();
   for (int ii = 0 ; ii < NSTEPS; ++ii){
+    mat_tmp = mat;
     relax(mat);
     print_gnuplot(mat);
+    if (compare(mat,mat_tmp) == true){
+      break;   
+    }
   }
   //print(mat);
 
@@ -137,4 +143,13 @@ void start_gnuplot (void){
   std::cout << "set terminal gif animate  " << std::endl;
   std::cout << "set out 'poisson.gif' " << std::endl;
   std::cout << "unset key " << std::endl; 
+}
+
+bool compare (const std::vector<double> & mat,const std::vector<double> & mat_tmp){
+  for (int ii = 0 ; ii < N ; ii++){
+    for (int jj = 0 ; jj < N ; jj++){
+      if (std::fabs(mat[ii*N+jj]-mat_tmp[ii*N+jj])/mat_tmp[ii*N+jj] > 0.01) return false;
+    }
+  }
+  return true;
 }
