@@ -1,0 +1,102 @@
+
+
+*******************************************************************************
+Wed May 17 10:16:14 2017
+
+
+FIT:    data read from 't.txt'
+        format = z
+        #datapoints = 100
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = c + b*x + a*x*x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 2.5497883300e+05   0.00e+00  2.57e+01    1.000000e+00   1.000000e+00   1.000000e+00
+7123 1.2606528917e-124 -2.00e+02  2.57e-21    1.197972e-64  -1.416358e-63   3.224266e-63
+
+The fit was stopped by the user after 71237 iterations.
+final sum of squares of residuals : 1.26065e-124
+abs. change during last iteration : -2.52257e-127
+
+
+Hmmmm.... Sum of squared residuals is zero. Can't compute errors.
+
+Final set of parameters 
+======================= 
+
+a               = 1.19797e-64    
+b               = -1.41636e-63   
+c               = 3.22427e-63    
+
+
+*******************************************************************************
+Wed May 17 10:17:08 2017
+
+
+FIT:    data read from 't.txt'
+        format = z
+        #datapoints = 100
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = c + b*x + a*x*x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 2.5497883300e+05   0.00e+00  2.57e+01    1.000000e+00   1.000000e+00   1.000000e+00
+1910 1.1143325123e-228 -2.00e+02  2.57e-21   1.126306e-116 -1.331628e-115  3.031381e-115
+
+The fit was stopped by the user after 191093 iterations.
+final sum of squares of residuals : 1.11433e-228
+abs. change during last iteration : -2.22978e-231
+
+
+Hmmmm.... Sum of squared residuals is zero. Can't compute errors.
+
+Final set of parameters 
+======================= 
+
+a               = 1.12631e-116   
+b               = -1.33163e-115  
+c               = 3.03138e-115   
+
+
+*******************************************************************************
+Wed May 17 10:18:36 2017
+
+
+FIT:    data read from 't.txt' u 1:3
+        format = x:z
+        #datapoints = 100
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = c + b*x + a*x*x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 4.3839354354e+06   0.00e+00  5.54e-115  1.126306e-116 -1.331628e-115  3.031381e-115
+  25 5.4101838294e-06  -3.98e-01  5.54e-115  -4.905000e+00  -2.141055e-05   9.876566e+00
+
+After 25 iterations the fit converged.
+final sum of squares of residuals : 5.41018e-06
+rel. change during last iteration : -3.98146e-06
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.000236168
+variance of residuals (reduced chisquare) = WSSR/ndf   : 5.57751e-08
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = -4.905           +/- 3.169e-06    (6.461e-05%)
+b               = -2.14106e-05     +/- 3.243e-05    (151.4%)
+c               = 9.87657          +/- 6.946e-05    (0.0007032%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.968  1.000 
+c               0.738 -0.861  1.000 
