@@ -17,12 +17,12 @@ int main(void) {
   }
   
 #pragma omp parallel  for  reduction(+:sum) num_threads(5) 
-   for(int  i = 0; i < N; i++)
-      {
-	sum +=  a[i];
-	
+  for(int  i = 0; i < N; i++)
+    {
+      sum +=  a[i];
+      
       }
-    
+  
   
   std::cout << sum << std::endl;
   delete [] a;
